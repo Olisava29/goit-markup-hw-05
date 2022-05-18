@@ -42,10 +42,6 @@ img {
 }
 
 /*Шапка сторінки*/
-.page-header {
-    padding-top: 24px;
-    padding-bottom: 25px;
-}
 
 .header-item {
     font-weight: 500;
@@ -53,13 +49,44 @@ img {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--second-basic-color);
-}
+    display: block;
+    padding: 32px 0px 32px 0px;
+}  
 
 .header-item:hover,
 .header-item:focus {
     color: #2196F3;
 }
 
+.current::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color:#2196F3;
+    border-radius: 2px;
+}
+
+/*.header-list .link.current::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color:#2196F3;
+    bottom: -1px;
+    left: 0;
+}*/
+
+.header-list .link.current {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: #2196F3;
+}
 
 .header-logo {
     font-family: 'Raleway';
@@ -261,6 +288,7 @@ img {
 .about-us-item { 
     flex-basis: calc((100% - 90px)/ 3);
     margin-right: 30px;
+    position: relative;
 }
 
 .about-us-heading {
@@ -271,6 +299,22 @@ img {
     letter-spacing: 0.03em;
     color: var(--second-basic-color);
     margin-bottom: 50px;
+}
+
+.about-us-thumb {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 27px;
+    background: rgba(47, 48, 58, 0.8);
+}
+
+.about-us-description {
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
 }
 
 /*Наша команда*/
@@ -630,10 +674,11 @@ img {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(44, 137, 212, 0.555);
+    background: rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: opacity 250ms, visibility 250ms;
 }
 
 .modal {
@@ -654,4 +699,10 @@ img {
     border-radius: 50%;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden ;
 }
