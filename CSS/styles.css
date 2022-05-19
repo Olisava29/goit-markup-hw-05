@@ -686,6 +686,7 @@ img {
     transition: opacity 250ms, visibility 250ms;
 }
 
+/*Модальне вікно*/
 .modal {
     position: absolute;
     width: 528px;
